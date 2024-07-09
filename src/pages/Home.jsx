@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import LatestBooks from '../components/LatestBooks'
+import CardBook from '../components/LatestBooks'
 
 
 
@@ -19,7 +19,7 @@ function Home() {
         <div>
           <h3 style={{textAlign: 'center', marginTop: '50px'}}>Latest books</h3>
           <div id='latestbooks'>
-            {show && show.map((item, index)=> {return <span key={index} ><LatestBooks item={item} index={index} id='card' /></span>})}
+            {show && show.map((item, index)=> {return <span key={index} ><CardBook item={item} index={index} id='card' /></span>})}
           </div>
         </div>
     </div>

@@ -1,20 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function LatestBooks({item,index}) {
+function CardBook({item,index}) {
+
+    const handleButton = (e) => {
+        e.preventDefault();
+        window.location.href = `/Book=${item.id}`
+    }
+
+
   return (
-    <Card id='card'>
-        <Card.Img  src={item.cover_image} style={{width: '350px', height: '400px', borderRadius: '20px 20px 0px 0px'}} />
+    <Card id='card' key={index}>
+        <Card.Img  src={item.cover_image} id='card-img'  onClick={handleButton} />
         <Card.Body>
-            <Card.Title>{item.title}</Card.Title>
-            <Card.Text>
+            <Card.Title style={{height:'52px'}} ><b>{item.title}</b></Card.Title>
+            <Card.Text id='carddescription'>
                 {item.description}
             </Card.Text>
-            <Button variant="primary">Add to list</Button>
+            <Button variant="primary" onClick={handleButton} style={{marginTop: '10px'}}>View book</Button>
         </Card.Body>
     </Card> 
   )
 }
 
-export default LatestBooks
+export default CardBook
