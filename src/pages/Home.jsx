@@ -29,27 +29,7 @@ function Home() {
             <p style={{fontSize: '20px'}} className='container'>Welcome to Book app, the ultimate destination for book lovers! Whether you’re an avid reader or just starting to explore the world of books, our app offers a rich and engaging experience. Discover an extensive library of books across various genres, from timeless classics to the latest bestsellers. Our intuitive search and filter options make it easy to find books by title, author, genre, or publication date. Personalized recommendations based on your reading history ensure you’ll always have something new and exciting to read. Engage with a community of fellow book enthusiasts by reading reviews, joining discussions in book clubs, and participating in interactive polls and quizzes. Create your own digital bookshelf to organize your reading collection and track your progress with our built-in reading tracker. Enjoy a seamless reading experience with our integrated e-reader, featuring customizable font sizes, themes, and a night mode for comfortable reading in any lighting condition. Sync your reading progress across all your devices, so you can pick up right where you left off. Join BookVerse today and immerse yourself in a world of literature. Discover, read, and share your passion for books with a vibrant community of readers. Happy reading!</p>
           </div>
         </div>
-        <footer id='footer' className='bg-body-tertiary'>
-          <div id='info'>
-            <h4 style={{color: 'black'}}>Help</h4>
-            <a href="/">Contact us</a>
-            <a href="/">Help center</a>
-            <a href="/">Report a problem</a>
-          </div>
-          <div id='info'>
-            <h4 style={{color: 'black'}}>Discover</h4>
-            <a href="/">Donate</a>
-            <a href="/">Add a book</a>
-            <a href="/">Visit us</a>
-          </div>
-          <div id='info'>
-            <h4 style={{color: 'black'}}>Languages</h4>
-            <a href="/">English</a>
-            <a href="/">Spanish</a>
-            <a href="/">Arabic</a>
-
-          </div>
-        </footer>
+        
     </div>
   )
 }

@@ -26,7 +26,9 @@ function NavScrollExample() {
       .then(data => setAuthors(data))
   },[])
 
-
+  const g = authors.map((item) => {return item.genre})
+  const ge = [].concat(...g)
+  const genres = [...new Set(ge)]
   
 
 
@@ -47,6 +49,13 @@ function NavScrollExample() {
               <Dropdown.Toggle split id="dropdown-split-basic" style={{paddingTop: '10px', backgroundColor:'rgba(255, 255, 255, 0)', border:'0px', color: 'rgb(70, 70, 70)'}} />
               <Dropdown.Menu id='authors-dropdown'>
                   {authors.map((item,index)=>{return <NavDropdown.Item key={index} href={`/BooksByAuthor=${item.author}`} >{item.author}</NavDropdown.Item>})}
+              </Dropdown.Menu>
+            </Dropdown>
+            <Dropdown as={ButtonGroup} >
+              <Button href='/Genres' style={{paddingTop: '8px', backgroundColor:'rgba(255, 255, 255, 0)', border:'0px', color: 'rgb(70, 70, 70)'}}>Genres</Button>
+              <Dropdown.Toggle split id="dropdown-split-basic" style={{paddingTop: '10px', backgroundColor:'rgba(255, 255, 255, 0)', border:'0px', color: 'rgb(70, 70, 70)'}} />
+              <Dropdown.Menu id='genres-dropdown'>
+                  {genres.map((item,index)=>{return <NavDropdown.Item key={index} href={`/Genre=${item}`} >{item}</NavDropdown.Item>})}
               </Dropdown.Menu>
             </Dropdown>
             <Nav.Link href="#about-us" >About us</Nav.Link>
