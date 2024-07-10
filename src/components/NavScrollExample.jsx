@@ -31,7 +31,7 @@ function NavScrollExample() {
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px', gap:'30px' }}
+
             navbarScroll
           >
             <Nav.Link href="/"><b>Home</b></Nav.Link>
@@ -43,7 +43,7 @@ function NavScrollExample() {
                   {authors.map((item,index)=>{return <NavDropdown.Item key={index} href={`/BooksByAuthor=${item.author}`} >{item.author}</NavDropdown.Item>})}
               </Dropdown.Menu>
             </Dropdown>
-            
+            <Nav.Link href="#about-us" >About us</Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control

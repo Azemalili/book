@@ -11,7 +11,7 @@
 #latestbooks{
     display: flex;
 	flex-direction: row;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 	justify-content: space-evenly;
 	align-items: center;
 }
@@ -98,4 +98,13 @@ box-shadow: 0px 0px 10px 0px rgba(71,71,71,0.35);
 	justify-content: space-evenly;
 	align-items: center;
 	align-content: stretch;
+}
+
+#about-us{
+    margin-top: 200px;
+    margin-bottom: 170px;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
 }
