@@ -8,6 +8,12 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
 import BooksByAuthor from '../pages/BooksByAuthor';
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem
+} from '@chakra-ui/react'
 
 function NavScrollExample() {
 
@@ -37,13 +43,15 @@ function NavScrollExample() {
             <Nav.Link href="/"><b>Home</b></Nav.Link>
             <Nav.Link href="/Books">Books</Nav.Link>
             <Dropdown as={ButtonGroup} >
-              <Button variant="" href='/Authors'>Authors</Button>
-              <Dropdown.Toggle split variant="" id="dropdown-split-basic" />
+              <Button href='/Authors' style={{paddingTop: '8px', backgroundColor:'rgba(255, 255, 255, 0)', border:'0px', color: 'rgb(70, 70, 70)'}}>Authors</Button>
+              <Dropdown.Toggle split id="dropdown-split-basic" style={{paddingTop: '10px', backgroundColor:'rgba(255, 255, 255, 0)', border:'0px', color: 'rgb(70, 70, 70)'}} />
               <Dropdown.Menu id='authors-dropdown'>
                   {authors.map((item,index)=>{return <NavDropdown.Item key={index} href={`/BooksByAuthor=${item.author}`} >{item.author}</NavDropdown.Item>})}
               </Dropdown.Menu>
             </Dropdown>
             <Nav.Link href="#about-us" >About us</Nav.Link>
+
+            <Nav.Link href="#footer" >Contact us</Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
