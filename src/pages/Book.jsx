@@ -17,7 +17,7 @@ function Book({item}) {
                     <p id='carddescription'>{item.description}</p>
                 </div>
                 <h3>Publication year: <b>{item.publication_year}</b></h3>
-                <h3>Genre: {item.genre.map((genre,i)=>{return <a key={i} href={`/Genre=${genre}`} style={{marginLeft: '20px',marginBottom: '5px', display:'block', color: 'blue'}}><b>{genre}</b></a>})}</h3>
+                <h3>Genre: {item.genre.map((genre,i)=>{return <a key={i} href={`/Genre=${genre}`} style={{marginLeft: '20px',marginBottom: '5px', display:'block', color: 'rgb(70, 70, 255)'}}><b>{genre}</b></a>})}</h3>
                 <Button variant="primary" style={{width: '34%', fontSize: '20px', margin: '0px 25%' }}>Add to reading list</Button>
             </div>
         </div>

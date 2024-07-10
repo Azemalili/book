@@ -13,7 +13,7 @@ function CardBook({item,index}) {
     <Card id='card' key={index}>
         <Card.Img  src={item.cover_image} id='card-img'  onClick={handleButton} />
         <Card.Body>
-            <Card.Title style={{height:'52px'}} ><b>{item.title}</b></Card.Title>
+            <Card.Title id='card-title' ><b>{item.title}</b></Card.Title>
             <Card.Text id='carddescription'>
                 {item.description}
             </Card.Text>
