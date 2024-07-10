@@ -11,6 +11,7 @@ function Book({item}) {
             <div id='bookdetails'>
                 
                 <h1 ><b>Title: </b>{item.title}</h1>
+                <h3>By: <b>{item.author}</b></h3>
                 <div>
                     <h3>Description:</h3>
                     <p id='carddescription'>{item.description}</p>

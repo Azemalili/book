@@ -8,6 +8,7 @@ import Authors from './pages/Authors';
 import Books from './pages/Books';
 import { useEffect, useState } from 'react';
 import Book from './pages/Book';
+import BooksByAuthor from './pages/BooksByAuthor';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/Authors' element={<Authors />} />
+          {book && book.map((item,index)=>{return <Route path={`/BooksByAuthor=${item.author}`} key={index} element={<BooksByAuthor item={item} key={index} />} />})}
           <Route path='/Books' element={<Books />} />
           {book && book.map((item,index) => {return <Route path={`/Book=${item.id}`} key={index} element={<Book item={item} />} />})}
           <Route path='*' element={<Error404 />} />

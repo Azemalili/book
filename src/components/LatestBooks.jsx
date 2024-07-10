@@ -8,8 +8,7 @@ function CardBook({item,index}) {
         e.preventDefault();
         window.location.href = `/Book=${item.id}`
     }
-
-
+    
   return (
     <Card id='card' key={index}>
         <Card.Img  src={item.cover_image} id='card-img'  onClick={handleButton} />

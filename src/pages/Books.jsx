@@ -12,9 +12,13 @@ function Books() {
     },[])
   
     return (
+    <>
+    <h1 style={{margin: '40px 0px', textAlign:'center'}}>All books</h1>
+    <hr style={{width: '70%', marginLeft:'15%'}}></hr>
     <div id='allbooks'>
         {books.map((item, index)=> {return <span key={index} ><CardBook item={item} index={index} id='card' /></span>})}
     </div>
+    </>
   )
 }
 
