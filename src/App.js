@@ -1,8 +1,7 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home'
 import { ChakraProvider } from '@chakra-ui/react'
-import NavScrollExample from './components/NavScrollExample';
 import Error404 from './pages/Error404';
 import Authors from './pages/Authors';
 import Books from './pages/Books';
@@ -11,9 +10,12 @@ import Book from './pages/Book';
 import BooksByAuthor from './pages/BooksByAuthor';
 import Genres from './pages/Genres';
 import BookByGenres from './pages/BookByGenres';
-import Footer from './components/Footer';
+import SearchBook from './pages/SearchBook';
+import Layout from './components/Layout';
 
 function App() {
+
+  
 
  const [book, setBook] = useState([]);
 
@@ -27,22 +29,47 @@ function App() {
  const ge = [].concat(...g)
  const genres = [...new Set(ge)]
 
+ const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    errorElement: <Error404 />,
+    children: [
+      { 
+        path: '/', element: <Home /> 
+      },
+      { 
+        path: '/Authors', element: <Authors /> 
+      },
+      {
+        path: '/BooksByAuthor/:authorName',
+        element: <BooksByAuthor api={book} />
+      },
+      {
+        path: `/BooksByGenre/:genre`,
+        element: <BookByGenres api={book} />
+      },
+      { 
+        path: '/Genres', element: <Genres genres={genres} /> 
+      },
+      { 
+        path: '/Books', element: <Books /> 
+      },{
+        path: `/Book/:bookID`,
+        element: <Book api={book} />
+      },
+      { 
+        path: '/Books/search/:inputValue', 
+        element: <SearchBook api={book} /> 
+      }
+    ]
+  }
+      
+])
+
   return (
     <ChakraProvider>
-      <BrowserRouter>
-      <NavScrollExample />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/Authors' element={<Authors />} />
-          {book && book.map((item,index)=>{return <Route path={`/BooksByAuthor=${item.author}`} key={index} element={<BooksByAuthor item={item} key={index} />} />})}
-          {book && genres.map((item,index)=>{return <Route path={`/Genre=${item}`} key={index} element={<BookByGenres item={item} key={index} />} />})}
-          <Route path='/Genres' element={<Genres genres={genres} />} />
-          <Route path='/Books' element={<Books />} />
-          {book && book.map((item,index) => {return <Route path={`/Book=${item.id}`} key={index} element={<Book item={item} />} />})}
-          <Route path='*' element={<Error404 />} />
-        </Routes>
-      </BrowserRouter>
-      <Footer />
+      <RouterProvider router={router} /> 
     </ChakraProvider>
   );
 }
